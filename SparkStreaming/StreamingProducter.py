@@ -1,7 +1,5 @@
+import sys
 import socket
-import hashlib
-import json
-import datetime
 import time
 import random
 
@@ -14,7 +12,8 @@ name_len = len(name)
 product_len = len(product)
 
 socket_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-socket_server.bind(('0.0.0.0', 7778))
+socket_server.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+socket_server.bind((sys.argv[1], int(sys.argv[2])))
 socket_server.listen(5)
 
 while True:
@@ -28,4 +27,5 @@ while True:
         s = name[random_user_index] +','+product[random_product_index][0]+','+str(product[random_product_index][1])
         print(s)
         conn.send(bytes(s, 'utf-8'))
+        conn.send(bytes('\n', 'utf-8'))
     socket_server.close()
