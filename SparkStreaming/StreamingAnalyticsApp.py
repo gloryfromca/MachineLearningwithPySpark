@@ -6,7 +6,7 @@ sc = SparkContext(appName="StreamingAnalysis")
 #just print ssc result and error 
 sc.setLogLevel("ERROR")
 
-ssc = StreamingContext(sc, batchDuration=5)# 5 seconds window 
+ssc = StreamingContext(sc, batchDuration=5)# batch rdd per 5 seconds
 # create socketTextStream
 lines = ssc.socketTextStream(sys.argv[1], int(sys.argv[2]))
 lines = lines.map(lambda x:tuple(x.split(',')))

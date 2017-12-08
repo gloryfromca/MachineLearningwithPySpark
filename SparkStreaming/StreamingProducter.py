@@ -4,8 +4,9 @@ import time
 import random
 
 #listen one recv, then send random purchase  
-name = ['zhanghui', 'zhangruixiang', 'jiangsaiya', 'xuqiuyi', 'liudehua', 'chenxiaochun', 'lilianjie', 'mayun',
-       'mahuateng', 'dechuanjiakang', 'zhitianxinchang', 'fenchenxiuji'
+name = ['zhanghui', 'zhangruixiang', 'jiangsaiya', 'xuqiuyi', 'liudehua',
+      'chenxiaochun', 'lilianjie', 'mayun', 'mahuateng', 'dechuanjiakang',
+      'zhitianxinchang', 'fenchenxiuji'
        ]
 product = [('iphone cover', 29), ('ipad cover', 99), ('Mi band', 199), ('kindle', 999)]
 name_len = len(name)
